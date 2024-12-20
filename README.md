@@ -16,9 +16,6 @@ This project is a Fullstack application built as part of a technical assessment 
   - Prisma ORM for seamless database interactions.
   - Next.js API routes for handling CRUD operations.
 
-- **Deployment**
-  - Fully deployed on [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/).
-
 ---
 
 ## 🛠️ Tech Stack
