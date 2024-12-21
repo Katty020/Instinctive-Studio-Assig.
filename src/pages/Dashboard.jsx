@@ -1,5 +1,5 @@
 import React from 'react'
-import RecentOrders from '../components/stuRecord'
+import Recent from '../components/stuRecord'
 
 export default function Dashboard() {
 	return (
@@ -9,7 +9,7 @@ export default function Dashboard() {
 				
 			</div>
 			<div className="flex flex-row gap-4 w-full">
-				<RecentOrders />
+				<Recent />
 				
 			</div>
 		</div>

@@ -17,19 +17,19 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 	{
 		key: 'student',
 		label: 'Student',
-		path: '/student',
+		path: '/Students',
 		icon: <HiOutlineUser />
 	},
 	{
 		key: 'chapters',
 		label: 'Chapters',
-		path: '/chapters',
+		path: '/Chapters',
 		icon: <HiOutlineDocumentText />
 	},
 	{
 		key: 'support',
 		label: 'Help',
-		path: '/support',
+		path: '/Help',
 		icon: <HiOutlineQuestionMarkCircle />
 	},
 	{
@@ -41,7 +41,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 	{
 		key: 'settings',
 		label: 'Settings',
-		path: '/settings',
+		path: '/Settings',
 		icon: <HiOutlineCog />
 	},
 ]

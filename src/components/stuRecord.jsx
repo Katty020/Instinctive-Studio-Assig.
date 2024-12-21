@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-// import  supabase  from './supabaseClient';
+import React, { useState, useEffect } from 'react';
 
 function AddStudentForm({ onAddStudent, onClose, studentToEdit, onEditStudent }) {
 	const [name, setName] = useState(studentToEdit ? studentToEdit.name : '');
@@ -100,22 +99,32 @@ function AddStudentForm({ onAddStudent, onClose, studentToEdit, onEditStudent })
 }
 
 export default function StudentTable() {
-	const initialStudentData = []; // Define initial student data
-	const [students, setStudents] = useState(initialStudentData);
+	const [students, setStudents] = useState([]);
 	const [showForm, setShowForm] = useState(false);
 	const [studentToEdit, setStudentToEdit] = useState(null);
 
+	useEffect(() => {
+		const storedStudents = JSON.parse(localStorage.getItem('students')) || [];
+		setStudents(storedStudents);
+	}, []);
+
 	const handleAddStudent = (newStudent) => {
-		setStudents([...students, newStudent]);
+		const updatedStudents = [...students, newStudent];
+		setStudents(updatedStudents);
+		localStorage.setItem('students', JSON.stringify(updatedStudents));
 	};
 
 	const handleEditStudent = (updatedStudent) => {
-		setStudents(students.map(student => student.id === updatedStudent.id ? updatedStudent : student));
+		const updatedStudents = students.map(student => student.id === updatedStudent.id ? updatedStudent : student);
+		setStudents(updatedStudents);
+		localStorage.setItem('students', JSON.stringify(updatedStudents));
 		setStudentToEdit(null);
 	};
 
 	const handleDeleteStudent = (studentId) => {
-		setStudents(students.filter(student => student.id !== studentId));
+		const updatedStudents = students.filter(student => student.id !== studentId);
+		setStudents(updatedStudents);
+		localStorage.setItem('students', JSON.stringify(updatedStudents));
 	};
 
 	const handleEditClick = (student) => {
