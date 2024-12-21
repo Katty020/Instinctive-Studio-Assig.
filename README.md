@@ -29,4 +29,4 @@ This project is a Fullstack application built as part of a technical assessment 
   - [Prisma](https://www.prisma.io/) for ORM and database management.
 
 - **Deployment**
-  - [Vercel](https://vercel.com/) / [Netlify](https://www.netlify.com/)
+  - [Vercel](https://vercel.com/)
